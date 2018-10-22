@@ -1,5 +1,5 @@
 #include <16F877A.h>
-#device ADC=12
+#device ADC=10
 
 #FUSES NOWDT                    //No Watch Dog Timer
 #FUSES NOBROWNOUT               //No brownout reset
