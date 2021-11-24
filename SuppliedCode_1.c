@@ -19,6 +19,7 @@ void main()
    // PWM CONFIGURATION
    delay_ms(10);
    set_tris_c(0x00);                      // Set all portc pins as output
+   set_tris_b(0x00);                      // Set all portb pins as output
    setup_ccp1(CCP_PWM);                   // PWM signal output at CCP1 pin 17
    setup_timer_2(T2_DIV_BY_16, 255, 1);   // CONFIGURE Timer Settings
    
