@@ -30,55 +30,55 @@ void main()
    
    unsigned long rotVelocity;
    unsigned long current;
-   int8 channel0 = 0;
-   int8 channel1 = 1;
    
    while(1)
    {
       output_high(MOTOR_DIR);                // CONFIGURE Motor Direction
       
-      set_pwm1_duty(102);
-      velocityFeedback = analogReadFunction(channel0);
+      set_pwm1_duty(26);
+	  set_adc_channel(0);                    // CONFIGURE Analog Reading Channel
+      velocityFeedback = read_adc();         // Start and Read A/D
+      delay_us(10);                          // Allow time after channel selection and reading
       // ENTER YOUR VELOCITY MODEL
       //rotVelocity = 
-      currentFeedback = analogReadFunction(channel1);
+	  set_adc_channel(1);                    // CONFIGURE Analog Reading Channel
+      currentFeedback = read_adc();         // Start and Read A/D
+      delay_us(10);                          // Allow time after channel selection and reading
       // ENTER YOUR CURRENT MODEL
       //current = 
       printf("Velocity=%lu, ",rotVelocity);   // Print ADC value
       printf("Current=%lu \n", current);
       delay_ms(2000);
       
-      set_pwm1_duty(204);
-      velocityFeedback = analogReadFunction(channel0);
+      set_pwm1_duty(51);
+      set_adc_channel(0);                    // CONFIGURE Analog Reading Channel
+      velocityFeedback = read_adc();         // Start and Read A/D
+      delay_us(10);                          // Allow time after channel selection and reading
       // ENTER YOUR VELOCITY MODEL
       //rotVelocity = 
-      currentFeedback = analogReadFunction(channel1);
+	  set_adc_channel(1);                    // CONFIGURE Analog Reading Channel
+      currentFeedback = read_adc();         // Start and Read A/D
+      delay_us(10);                          // Allow time after channel selection and reading
       // ENTER YOUR CURRENT MODEL
       //current = 
       printf("Velocity=%lu, ",rotVelocity);   // Print ADC value
       printf("Current=%lu \n", current);
       delay_ms(2000);
       
-      set_pwm1_duty(306);
-      velocityFeedback = analogReadFunction(channel0);
+      set_pwm1_duty(77);
+      set_adc_channel(0);                    // CONFIGURE Analog Reading Channel
+      velocityFeedback = read_adc();         // Start and Read A/D
+      delay_us(10);                          // Allow time after channel selection and reading
       // ENTER YOUR VELOCITY MODEL
       //rotVelocity = 
-      currentFeedback = analogReadFunction(channel1);
+	  set_adc_channel(1);                    // CONFIGURE Analog Reading Channel
+      currentFeedback = read_adc();         // Start and Read A/D
+      delay_us(10);                          // Allow time after channel selection and reading
       // ENTER YOUR CURRENT MODEL
       //current = 
       printf("Velocity=%lu, ",rotVelocity);   // Print ADC value
       printf("Current=%lu \n", current);
       delay_ms(2000);
    }
-}
-//custom function for changing PWM1 value
-unsigned long analogReadFunction(int8 channel)
-{
-      // ANALOG READING PART (UNCOMMENT IF YOU NEED)
-      set_adc_channel(channel);                    // CONFIGURE Analog Reading Channel
-      unsigned long analogValue = read_adc();         // Start and Read A/D
-      delay_us(10);                          // Allow time after channel selection and reading
-      
-      return analogValue;
 }
 
